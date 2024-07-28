@@ -1,0 +1,18 @@
+<div class="form">
+  <h2>Login</h2>
+  <ng-container *ngFor="let item of data | keyvalue : asIsOrder">
+    <div class="form-field">
+      <label>{{ item.key | titlecase }} </label>
+      <input
+        #box
+        type="text"
+        class="input"
+        value="{{ item.value }}"
+        (focusout)="change(item.key, box.value)"
+        placeholder="Enter value"
+      />
+    </div>
+  </ng-container>
+
+  <div class="add" (click)="apply()"><span>Add</span></div>
+</div>
